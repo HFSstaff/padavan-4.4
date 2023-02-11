@@ -13,7 +13,7 @@ cat /tmp/smartdns/google.conf >> /tmp/smartdns/china.conf 2>/dev/null
 
 #删除不符合规则的域名
 #sed -i "s/^server=\/\(.*\)\/[^\/]*$/nameserver \/\1\/china/g;/^nameserver/!d" /tmp/smartdns/china.conf 2>/dev/null
-sed -i "s/^server=\/\(.*\)\/[^\/]*$/domain-rules \/\1\/ -c tcp:80,tcp:443 -n china/g;/^domain-rules/!d" /tmp/smartdns/china.conf 2>/dev/null
+sed -i "s/^server=\/\(.*\)\/[^\/]*$/domain-rules \/\1\/ -c tcp:80,tcp:443 -n china -d yes/g;/^domain-rules/!d" /tmp/smartdns/china.conf 2>/dev/null
 
 fsz=`stat -c %s /tmp/smartdns/china.conf 2>/dev/null`
 
