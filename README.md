@@ -54,11 +54,11 @@ This project is based on original rt-n56u with latest mtk 4.4.198 kernel, which 
     ```
   - Clone source code
     ```sh
-    git clone https://github.com/hanwckf/padavan-4.4.git
+    git clone https://github.com/HFSstaff/padavan-4.4.git
     ```
   - Prepare toolchain
     ```sh
-    cd padavan-4.4/toolchain-mipsel
+    cd ~/padavan-4.4/toolchain-mipsel
 
     # (Recommend) Download prebuilt toolchain for x86_64 or aarch64 host
     ./dl_toolchain.sh
@@ -68,7 +68,7 @@ This project is based on original rt-n56u with latest mtk 4.4.198 kernel, which 
     ```
   - Modify template file and start compiling
     ```sh
-    cd padavan-4.4/trunk
+    cd ~/padavan-4.4/trunk
 
     # (Optional) Modify template file
     # nano configs/templates/K2P.config
