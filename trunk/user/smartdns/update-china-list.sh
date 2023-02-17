@@ -37,6 +37,12 @@ if [ -n "$fsz" ] && [ $fsz -ge 1000000 ] ; then
 	#smartdns -c /etc/storage/smartdns_custom.conf
 
 	mtd_storage.sh save >/dev/null 2>&1
+	
+	logger -st "smartdns" "China-list Update Done"
+	
+else
+	
+	logger -st "smartdns" "China-list Download Failed"
 
 fi
 
