@@ -666,6 +666,9 @@ init_crontab(void)
 	ret |= system("/sbin/check_crontab.sh 0 8 a/10 a a update_chnroute.sh");
 	ret |= system("/sbin/check_crontab.sh 0 7 a/10 a a update_gfwlist.sh");
 #endif
+#if defined (APP_SMARTDNS)
+	ret |= system("/sbin/check_crontab.sh 15 4 a a a update-china-list.sh");
+#endif
 	return ret;
 }
 
