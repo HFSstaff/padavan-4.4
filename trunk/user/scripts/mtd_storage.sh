@@ -278,6 +278,12 @@ sync && echo 3 > /proc/sys/vm/drop_caches
 #wing 192.168.1.9:1080
 #ipset add gfwlist 8.8.4.4
 
+# kcptun
+#GOGC=20 nohup /usr/bin/kcptun -c /etc_ro/kcptun_local.json &
+
+# smartdns
+#smartdns -c /etc_ro/smartdns_custom.conf
+
 
 EOF
 		chmod 755 "$script_started"
@@ -519,6 +525,17 @@ EOF
 ### gfwlist related (resolve by port 5353)
 #min-cache-ttl=3600
 #conf-dir=/etc/storage/gfwlist
+
+EOF
+	fi
+	
+	if [ -f /usr/bin/smartdns ]; then
+		cat >> "$user_dnsmasq_conf" <<EOF
+### smartdns
+#port=0
+#server=::1#8051
+#no-resolv
+#server=127.0.0.1#8051
 
 EOF
 	fi
