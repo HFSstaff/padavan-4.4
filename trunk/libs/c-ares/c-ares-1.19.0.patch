@@ -1,0 +1,12 @@
+diff -rupw c-ares-1.19.0-orig/CMakeLists.txt c-ares-1.19.0/CMakeLists.txt
+--- c-ares-1.19.0-orig/CMakeLists.txt	2023-01-29 05:07:58.000000000 +0800
++++ c-ares-1.19.0/CMakeLists.txt	2023-02-21 22:24:59.619917800 +0800
+@@ -623,7 +623,7 @@ ADD_SUBDIRECTORY (include)
+ ADD_SUBDIRECTORY (src)
+ 
+ # Docs
+-ADD_SUBDIRECTORY (docs)
++#ADD_SUBDIRECTORY (docs)
+ 
+ # Tests
+ IF (CARES_BUILD_TESTS OR CARES_BUILD_CONTAINER_TESTS)
