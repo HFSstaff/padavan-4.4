@@ -30,7 +30,7 @@ configure:
 	-DCMAKE_TOOLCHAIN_FILE=../../cross-mipsel-linux.cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_SHARED_LIBS=ON \
-	-DBUILD_STATIC_LIBS=OFF \
+	-DBUILD_STATIC_LIBS=ON \
 	-DDISABLE_EXTRA_LIBS=ON \
 	.. \
 	)
