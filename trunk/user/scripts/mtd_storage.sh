@@ -536,6 +536,7 @@ EOF
 #server=::1#8051
 #no-resolv
 #server=127.0.0.1#8051
+#cache-size=0
 
 EOF
 	fi
