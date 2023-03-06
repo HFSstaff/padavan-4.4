@@ -26,9 +26,9 @@ if [ -n "$fsz" ] && [ $fsz -ge 1000000 ] ; then
 
 	sleep 8
 
-	restart_dhcpd
+	#restart_dhcpd
 
-	restart_dns
+	#restart_dns
 
 	rm -rf /tmp/smartdns.cache
 
