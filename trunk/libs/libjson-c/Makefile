@@ -1,6 +1,6 @@
-SRC_NAME=json-c-json-c-0.13.1-20180305
-SRC_URL=https://github.com/json-c/json-c/archive/json-c-0.13.1-20180305.tar.gz
-ARCHIVE_NAME=json-c-0.13.1-20180305
+SRC_NAME=json-c-json-c-0.17-20230812
+SRC_URL=https://github.com/json-c/json-c/archive/json-c-0.17-20230812.tar.gz
+ARCHIVE_NAME=json-c-0.17
 
 all: download_test extract_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
@@ -13,6 +13,7 @@ download_test:
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar zxf $(ARCHIVE_NAME).tar.gz; \
+		patch -d $(SRC_NAME) -p1 -i ../json-c-0.17.patch ; \
 	fi )
 
 config_test:
