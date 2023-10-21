@@ -257,6 +257,11 @@ dl_update_leds(void)
 	int front_led_x;
 	int dl_state;
 
+	LED_CONTROL(LED_PWR, LED_ON);
+	LED_CONTROL(LED_WIFI, LED_ON);
+	LED_CONTROL(LED_SW2G, LED_ON);
+	LED_CONTROL(LED_SW5G, LED_ON);
+
 	front_led_x = nvram_get_int("front_led_wan");
 	dl_state = 0;
 	if (!dl_is_ap_mode) {
@@ -301,10 +306,10 @@ dl_update_leds(void)
 	}
 #endif
 
-	LED_CONTROL(LED_WIFI, LED_ON);
-	LED_CONTROL(LED_PWR, LED_ON);
-	LED_CONTROL(LED_SW2G, LED_ON);
-	LED_CONTROL(LED_SW5G, LED_ON);
+	// LED_CONTROL(LED_WIFI, LED_ON);
+	// LED_CONTROL(LED_PWR, LED_ON);
+	// LED_CONTROL(LED_SW2G, LED_ON);
+	// LED_CONTROL(LED_SW5G, LED_ON);
 	LED_CONTROL(LED_ROUTER, (dl_is_ap_mode) ? LED_OFF : LED_ON);
 }
 
