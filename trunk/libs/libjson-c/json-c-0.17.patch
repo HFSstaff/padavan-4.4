@@ -1,0 +1,32 @@
+diff -urw json-c-json-c-0.17-20230812-ref/CMakeLists.txt json-c-json-c-0.17-20230812/CMakeLists.txt
+--- json-c-json-c-0.17-20230812-ref/CMakeLists.txt	2023-08-12 19:00:16.000000000 +0000
++++ json-c-json-c-0.17-20230812/CMakeLists.txt	2023-10-21 13:43:41.000000000 +0000
+@@ -36,7 +36,6 @@
+ 	cmake_policy(SET CMP0075 NEW)
+ endif()
+ 
+-include(CTest)
+ 
+ # Set some packaging variables.
+ set(CPACK_PACKAGE_NAME              "${PROJECT_NAME}")
+@@ -451,7 +450,6 @@
+ include_directories(${PROJECT_SOURCE_DIR})
+ include_directories(${PROJECT_BINARY_DIR})
+ 
+-add_subdirectory(doc)
+ 
+ # "uninstall" custom target for make generators in unix like operating systems
+ # and if that target is not present
+@@ -577,12 +575,6 @@
+ 
+ install(FILES ${JSON_C_PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/json-c)
+ 
+-if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING AND
+-   (NOT MSVC OR NOT (MSVC_VERSION LESS 1800)) # Tests need at least VS2013
+-   )
+-add_subdirectory(tests)
+-endif()
+-
+ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_APPS)
+ # skip apps when we're included in someone else's build
+ if (NOT MSVC)  # cmd line apps don't built on Windows currently.
