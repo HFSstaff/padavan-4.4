@@ -33,13 +33,11 @@ configure:
 	)
 
 clean:
-	if [ -f $(SRC_NAME)/Makefile ] ; then \
-		$(MAKE) -C $(SRC_NAME) distclean ; \
-	fi ; \
+	rm -rf $(SRC_NAME)/build
 	rm -f config_done
 
 install:
-	$(MAKE) -C $(SRC_NAME) install DESTDIR=""
+	$(MAKE) -C $(SRC_NAME)/build install DESTDIR=""
 
 romfs:
 	cp -fP $(DESTDIR)/lib/libjson-c.so* $(ROMFSDIR)/lib
