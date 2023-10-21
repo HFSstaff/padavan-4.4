@@ -42,7 +42,6 @@ configure:
 		--disable-iproute2 \
 		--disable-unit-tests \
 		--disable-management \
-		--disable-dco \
 		--enable-small \
 		--enable-multihome \
 		--enable-pf \
