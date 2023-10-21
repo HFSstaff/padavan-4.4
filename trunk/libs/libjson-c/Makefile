@@ -24,15 +24,12 @@ config_test:
 	fi )
 
 configure:
-	( cd $(SRC_NAME) ; \
-	sh autogen.sh; \
-	sed -e 's/#undef malloc.*//g' -e 's/#undef realloc.*//g' -i config.h.in; \
-	./configure \
-		--prefix=$(STAGEDIR) \
-		--enable-static \
-		--enable-shared \
-		--host=$(HOST_TARGET) \
-		--build=$(HOST_BUILD) ; \
+	( mkdir -p $(SRC_NAME)/build && cd $(SRC_NAME)/build ; \
+	cmake \
+	-DCMAKE_INSTALL_PREFIX=$(STAGEDIR) \
+	-DCMAKE_TOOLCHAIN_FILE=../../cross-mipsel-linux.cmake \
+	-DDISABLE_EXTRA_LIBS=TRUE \
+	.. \
 	)
 
 clean:
